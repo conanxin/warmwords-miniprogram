@@ -1,0 +1,107 @@
+<view class="sticker-card {{compact ? 'compact' : ''}}">
+  <!-- Card Header: Image + Badge -->
+  <view class="card-header" wx:if="{{!compact}}">
+    <view class="image-sticker-wrap">
+      <view class="image-sticker" wx:if="{{imagePath && !imagePath.startsWith('mock')}}">
+        <image src="{{imagePath}}" mode="aspectFill" class="sticker-img" />
+      </view>
+      <view class="image-sticker placeholder" wx:else>
+        <text class="placeholder-icon">📷</text>
+      </view>
+      <!-- Sticker tape decoration -->
+      <view class="sticker-tape tape-top"></view>
+    </view>
+  </view>
+
+  <!-- AI Badge -->
+  <view class="card-badge">
+    <text class="badge-icon">✨</text>
+    <text class="badge-text">识别信心 {{confidencePercent}}%</text>
+  </view>
+
+  <!-- Language Tabs -->
+  <view class="lang-tabs" wx:if="{{!compact}}">
+    <view
+      class="lang-tab {{currentLang === 'zh' ? 'active' : ''}}"
+      bindtap="switchLang"
+      data-lang="zh"
+    >
+      <text>中</text>
+    </view>
+    <view
+      class="lang-tab {{currentLang === 'en' ? 'active' : ''}}"
+      bindtap="switchLang"
+      data-lang="en"
+    >
+      <text>EN</text>
+    </view>
+    <view
+      class="lang-tab {{currentLang === 'ja' ? 'active' : ''}}"
+      bindtap="switchLang"
+      data-lang="ja"
+    >
+      <text>日</text>
+    </view>
+    <view
+      class="lang-tab {{currentLang === 'ko' ? 'active' : ''}}"
+      bindtap="switchLang"
+      data-lang="ko"
+    >
+      <text>韩</text>
+    </view>
+  </view>
+
+  <!-- Word Display -->
+  <view class="word-display">
+    <text class="word-main">{{word[currentLang]}}</text>
+    <text class="word-phonetic" wx:if="{{currentLang === 'en'}}">/{{word.phonetic}}/</text>
+  </view>
+
+  <!-- Multilingual Rows -->
+  <view class="lang-rows" wx:if="{{!compact}}">
+    <view class="lang-row">
+      <text class="lang-flag">🇨🇳</text>
+      <text class="lang-value">{{word.zh}}</text>
+    </view>
+    <view class="lang-row">
+      <text class="lang-flag">🇺🇸</text>
+      <text class="lang-value">{{word.en}}</text>
+    </view>
+    <view class="lang-row">
+      <text class="lang-flag">🇯🇵</text>
+      <text class="lang-value">{{word.ja}}</text>
+    </view>
+    <view class="lang-row">
+      <text class="lang-flag">🇰🇷</text>
+      <text class="lang-value">{{word.ko}}</text>
+    </view>
+  </view>
+
+  <!-- Example Section -->
+  <view class="example-section" wx:if="{{!compact}}">
+    <view class="example-block example-en">
+      <text class="example-label">📝 例句</text>
+      <text class="example-text">{{word.exampleEn}}</text>
+    </view>
+    <view class="example-block example-zh">
+      <text class="example-label">💡 解释</text>
+      <text class="example-text">{{word.exampleZh}}</text>
+    </view>
+  </view>
+
+  <!-- Kid Note -->
+  <view class="kid-note" wx:if="{{!compact && word.kidNote}}">
+    <text class="kid-note-icon">💬</text>
+    <text class="kid-note-text">给小朋友的话：{{word.kidNote}}</text>
+  </view>
+
+  <!-- Tags -->
+  <view class="tags-row" wx:if="{{word.tags && word.tags.length && !compact}}">
+    <text class="tag" wx:for="{{word.tags}}" wx:key="*this">{{item}}</text>
+  </view>
+
+  <!-- Confidence Bar (visible in compact) -->
+  <view class="confidence-mini" wx:if="{{compact}}">
+    <text class="confidence-text">识别 {{confidencePercent}}%</text>
+  </view>
+</view>

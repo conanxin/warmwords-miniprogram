@@ -1,0 +1,44 @@
+<view class="page">
+  <!-- Header -->
+  <view class="page-header">
+    <text class="page-title">📚 我的贴纸书</text>
+    <text class="page-subtitle">这里收藏了你从真实世界里发现的单词。</text>
+  </view>
+
+  <!-- Empty State -->
+  <view class="empty-state" wx:if="{{isEmpty}}">
+    <text class="empty-icon">📭</text>
+    <text class="empty-title">还没有贴纸</text>
+    <text class="empty-sub">去拍下第一个单词，让今天多一个新发现。</text>
+    <navigator url="/pages/index/index" class="empty-cta">
+      <text>开始拍摄 📷</text>
+    </navigator>
+  </view>
+
+  <!-- Sticker Grid -->
+  <view class="sticker-grid" wx:else>
+    <view
+      class="sticker-grid-item"
+      wx:for="{{words}}"
+      wx:key="id"
+    >
+      <view class="grid-card">
+        <view class="grid-card-image">
+          <text class="grid-card-emoji">📷</text>
+        </view>
+        <view class="grid-card-info">
+          <text class="grid-card-en">{{item.en}}</text>
+          <text class="grid-card-zh">{{item.zh}}</text>
+          <text class="grid-card-count">复习 {{item.reviewCount || 0}} 次</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Footer: Clear -->
+  <view class="page-footer" wx:if="{{!isEmpty}}">
+    <button class="btn-clear" bindtap="clearLibrary" hover-class="btn-active">
+      <text>🗑️ 清空贴纸书</text>
+    </button>
+  </view>
+</view>

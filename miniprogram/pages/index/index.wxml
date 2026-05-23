@@ -1,0 +1,77 @@
+<view class="page">
+  <!-- Top Hero -->
+  <view class="hero">
+    <view class="hero-bg-circle circle-1"></view>
+    <view class="hero-bg-circle circle-2"></view>
+
+    <view class="hero-header">
+      <view class="product-logo">📸</view>
+      <text class="product-name">拍词贴</text>
+      <text class="slogan">看到什么，拍一下，变成你的单词贴纸。</text>
+      <text class="sub-slogan">和孩子一起，把上学路、厨房、公园和旅行\n变成一本会说话的词汇书。</text>
+    </view>
+
+    <!-- Feature chips -->
+    <view class="feature-chips">
+      <view class="chip">
+        <text class="chip-icon">📷</text>
+        <text class="chip-text">拍照识物</text>
+      </view>
+      <view class="chip">
+        <text class="chip-icon">🌍</text>
+        <text class="chip-text">多语言词卡</text>
+      </view>
+      <view class="chip">
+        <text class="chip-icon">🔄</text>
+        <text class="chip-text">每日复习</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Action Area -->
+  <view class="action-area">
+    <button class="btn-camera" bindtap="chooseMedia" hover-class="btn-active">
+      <text class="btn-camera-icon">📷</text>
+      <view class="btn-camera-text">
+        <text class="btn-camera-title">拍下一个单词</text>
+        <text class="btn-camera-sub">用相机识别身边的事物</text>
+      </view>
+    </button>
+
+    <button class="btn-album" bindtap="chooseAlbum" hover-class="btn-active">
+      <text class="btn-album-icon">🖼️</text>
+      <text class="btn-album-text">从相册选择</text>
+    </button>
+  </view>
+
+  <!-- Today's Inspiration -->
+  <view class="inspiration-area">
+    <text class="inspiration-title">✨ 今日灵感</text>
+    <view class="inspiration-list">
+      <view class="inspiration-card">
+        <text class="inspiration-emoji">🍳</text>
+        <text class="inspiration-desc">在厨房找一个单词</text>
+      </view>
+      <view class="inspiration-card">
+        <text class="inspiration-emoji">🚶</text>
+        <text class="inspiration-desc">在路上找一个标志</text>
+      </view>
+      <view class="inspiration-card">
+        <text class="inspiration-emoji">📚</text>
+        <text class="inspiration-desc">在书桌找一个物品</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Bottom Nav -->
+  <view class="bottom-nav">
+    <navigator url="/pages/library/library" class="nav-item">
+      <text class="nav-icon">📚</text>
+      <text class="nav-label">我的贴纸书</text>
+    </navigator>
+    <navigator url="/pages/review/review" class="nav-item">
+      <text class="nav-icon">🔄</text>
+      <text class="nav-label">复习</text>
+    </navigator>
+  </view>
+</view>

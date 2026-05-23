@@ -1,0 +1,12 @@
+{
+  "name": "cleanupRecognitionImages",
+  "version": "1.0.0",
+  "description": "云函数：定期清理云存储 recognition-inputs/ 下过期的临时识别图片",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  },
+  "engines": {
+    "node": ">=12.0"
+  }
+}

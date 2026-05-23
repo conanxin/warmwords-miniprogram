@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "sticker-card": "/components/sticker-card/sticker-card"
+  },
+  "navigationBarTitleText": "我的贴纸书"
+}

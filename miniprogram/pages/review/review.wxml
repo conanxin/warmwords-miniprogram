@@ -1,0 +1,58 @@
+<view class="page">
+  <!-- Header -->
+  <view class="page-header">
+    <text class="page-title">🔄 今日复习</text>
+    <text class="page-subtitle">再看一眼，单词就会慢慢住进记忆里。</text>
+  </view>
+
+  <!-- Empty State -->
+  <view class="empty-state" wx:if="{{isEmpty}}">
+    <text class="empty-icon">🎉</text>
+    <text class="empty-title">{{todayEncouragement}}</text>
+    <text class="empty-sub">可以去拍一个新的单词，发现更多新事物。</text>
+    <navigator url="/pages/index/index" class="empty-cta">
+      <text>去拍新单词 📷</text>
+    </navigator>
+  </view>
+
+  <!-- Review Cards -->
+  <view class="review-list" wx:else>
+    <view
+      class="review-item"
+      wx:for="{{dueWords}}"
+      wx:key="id"
+    >
+      <!-- Word Display -->
+      <view class="review-word-area">
+        <text class="review-word-en">{{item.en}}</text>
+        <text class="review-word-phonetic">/{{item.phonetic}}/</text>
+        <text class="review-word-zh">{{item.zh}}</text>
+      </view>
+
+      <!-- Example -->
+      <view class="review-example">
+        <text class="review-example-text">{{item.exampleEn}}</text>
+      </view>
+
+      <!-- Action Buttons -->
+      <view class="review-actions">
+        <button
+          class="review-btn btn-learning"
+          data-id="{{item.id}}"
+          bindtap="markLearning"
+          hover-class="btn-active"
+        >
+          <text>📝 我还不熟</text>
+        </button>
+        <button
+          class="review-btn btn-known"
+          data-id="{{item.id}}"
+          bindtap="markKnown"
+          hover-class="btn-active"
+        >
+          <text>🎯 我认识</text>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

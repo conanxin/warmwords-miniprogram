@@ -1,0 +1,53 @@
+<view class="page">
+  <!-- Decorative background -->
+  <view class="bg-decoration">
+    <view class="deco-dot dot-1"></view>
+    <view class="deco-dot dot-2"></view>
+    <view class="deco-dot dot-3"></view>
+    <view class="deco-glow"></view>
+  </view>
+
+  <!-- Top Status -->
+  <view class="top-status">
+    <view class="status-badge">
+      <text class="status-check">✓</text>
+      <text class="status-text">识别完成</text>
+    </view>
+    <text class="status-hint">这个物体可以变成你的新词贴。</text>
+  </view>
+
+  <!-- Sticker Card Area -->
+  <view class="card-area" wx:if="{{word}}">
+    <sticker-card
+      word="{{word}}"
+      imagePath="{{imagePath}}"
+    />
+  </view>
+
+  <!-- Action Buttons -->
+  <view class="action-bar" wx:if="{{word}}">
+    <button class="action-btn play-btn" bindtap="playPronunciation" hover-class="btn-active">
+      <text class="action-icon">🔊</text>
+      <text class="action-label">听一听发音</text>
+    </button>
+    <button
+      class="action-btn save-btn {{saved ? 'saved' : ''}}"
+      bindtap="saveToLibrary"
+      disabled="{{saved}}"
+      hover-class="btn-active"
+    >
+      <text class="action-icon">{{saved ? '✓' : '💾'}}</text>
+      <text class="action-label">{{saved ? '已保存' : '保存到我的贴纸书'}}</text>
+    </button>
+  </view>
+
+  <!-- Compliance Notice -->
+  <view class="compliance-notice" wx:if="{{word}}">
+    <text class="notice-main">这个词卡由 AI 根据图片生成，可能不完全准确。</text>
+    <text class="notice-sub">图片仅用于本次识别。识别完成后，我们会删除云端临时图片。</text>
+  </view>
+
+  <button class="btn-back" bindtap="takeAnother" hover-class="btn-active">
+    <text>📷 再拍一个</text>
+  </button>
+</view>

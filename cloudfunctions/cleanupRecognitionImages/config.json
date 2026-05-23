@@ -1,0 +1,9 @@
+{
+  "triggers": [
+    {
+      "name": "cleanup-recognition-images-dryrun",
+      "type": "timer",
+      "config": "0 0 */6 * * * *"
+    }
+  ]
+}

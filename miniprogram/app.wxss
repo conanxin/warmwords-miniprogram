@@ -1,0 +1,159 @@
+/* ============================================
+   拍词贴 - 全局设计系统
+   明亮 · 现代 · 温暖 · 亲子友好
+
+   注意：微信小程序 WXSS 支持 CSS Custom Properties（WXSS 1.0+）
+   但为了最大兼容性，所有 var() 均配有硬编码 fallback。
+   如遇样式异常，请检查微信开发者工具版本。
+   ============================================ */
+
+/* ---- 设计变量（page 级别）---- */
+page {
+  /* 主色系：清爽蓝 */
+  --color-primary: #5b9cf6;
+  --color-primary-dark: #3b7ddd;
+  --color-primary-light: #8fc1ff;
+  --color-primary-ghost: rgba(91, 156, 246, 0.12);
+
+  /* 辅助色：薄荷绿 */
+  --color-accent: #48bb78;
+  --color-accent-light: #9ae6b4;
+
+  /* 文字层级 */
+  --color-text-primary: #1a202c;
+  --color-text-secondary: #4a5568;
+  --color-text-muted: #a0aec0;
+  --color-text-inverse: #ffffff;
+
+  /* 背景 */
+  --color-bg: #f0f5ff;
+  --color-bg-card: #ffffff;
+  --color-bg-muted: #f7f8fc;
+
+  /* 圆角 */
+  --radius-sm: 16rpx;
+  --radius-md: 24rpx;
+  --radius-lg: 36rpx;
+  --radius-full: 9999rpx;
+
+  /* 阴影 */
+  --shadow-sm: 0 2rpx 8rpx rgba(100, 120, 200, 0.08);
+  --shadow-md: 0 4rpx 20rpx rgba(100, 120, 200, 0.12);
+  --shadow-lg: 0 8rpx 32rpx rgba(100, 120, 200, 0.16);
+
+  /* 间距 */
+  --space-xs: 8rpx;
+  --space-sm: 16rpx;
+  --space-md: 24rpx;
+  --space-lg: 40rpx;
+  --space-xl: 60rpx;
+
+  /* 字体 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ---- 全局背景 ---- */
+page {
+  background-color: #f0f5ff;
+  background-color: var(--color-bg);
+  color: #1a202c;
+  color: var(--color-text-primary);
+}
+
+/* ---- 通用类 ---- */
+.page-shell {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.soft-card {
+  background: #ffffff;
+  background: var(--color-bg-card);
+  border-radius: 36rpx;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4rpx 20rpx rgba(100, 120, 200, 0.12);
+  box-shadow: var(--shadow-md);
+  padding: 24rpx;
+  padding: var(--space-md);
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #5b9cf6 0%, #4f8edc 100%);
+  color: #ffffff;
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: 9999rpx;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6rpx 20rpx rgba(91, 156, 246, 0.35);
+  font-size: 30rpx;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rpx;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ghost-button {
+  background: #ffffff;
+  background: var(--color-bg-card);
+  color: #5b9cf6;
+  color: var(--color-primary);
+  border: 2rpx solid #5b9cf6;
+  border: 2rpx solid var(--color-primary);
+  border-radius: 9999rpx;
+  border-radius: var(--radius-full);
+  font-size: 28rpx;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rpx;
+  transition: transform 0.2s;
+}
+
+.section-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1a202c;
+  color: var(--color-text-primary);
+  margin-bottom: 16rpx;
+  margin-bottom: var(--space-sm);
+}
+
+.muted-text {
+  font-size: 26rpx;
+  color: #a0aec0;
+  color: var(--color-text-muted);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 60rpx;
+  text-align: center;
+}
+
+.empty-state-icon {
+  font-size: 120rpx;
+  margin-bottom: 32rpx;
+}
+
+.empty-state-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #4a5568;
+  color: var(--color-text-secondary);
+  margin-bottom: 16rpx;
+}
+
+.empty-state-sub {
+  font-size: 26rpx;
+  color: #a0aec0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 460rpx;
+}
