@@ -187,6 +187,22 @@ node scripts/test_tts_response_parse_static.js
 find miniprogram cloudfunctions scripts -name "*.js" -type f -print0 | xargs -0 -n1 node -c
 ```
 
+### Security Reminders
+
+- **Never commit real `.env` files or environment variables** to GitHub
+- **Never commit `project.private.config.json`** (contains real AppID)
+- **Never commit full cloud file IDs** (`cloud://...`) in code or documentation
+- All credentials managed via **WeChat cloud function environment variables** — never hardcode
+- If you accidentally commit a secret, **revoke and rotate immediately**
+
+### Open Source Release
+
+- **GitHub Release:** [v0.1.0](https://github.com/conanxin/warmwords-miniprogram/releases/tag/v0.1.0)
+- **Release Notes:** [docs/RELEASE_NOTES_v0.1.0.md](./docs/RELEASE_NOTES_v0.1.0.md)
+- **Maintainer Notes:** [docs/OPEN_SOURCE_MAINTAINER_NOTES.md](./docs/OPEN_SOURCE_MAINTAINER_NOTES.md)
+
+> **Note:** Some internal development docs (`docs/PHASE_3*/`, `docs/PHASE_4*/`, `docs/PHASE_5*/`) may be simplified or reorganized in future releases.
+
 ### Roadmap
 
 **v0.1 (current)** — Core release
@@ -261,6 +277,22 @@ MIT License — see [LICENSE](./LICENSE)
 
 MIT License — see [LICENSE](./LICENSE)
 
-### Disclaimer
+### 安全提示
+
+- **不要把真实 .env 文件或环境变量提交到 GitHub**
+- **不要提交 `project.private.config.json`**（含真实 AppID）
+- **不要在代码或文档中提交完整 cloud file ID**（`cloud://...`）
+- 所有凭证通过微信云函数环境变量管理，不要硬编码
+- 如果误提交了密钥，**立即吊销并重新生成**
+
+### 开源发布
+
+- **GitHub Release:** [v0.1.0](https://github.com/conanxin/warmwords-miniprogram/releases/tag/v0.1.0)
+- **Release Notes:** [docs/RELEASE_NOTES_v0.1.0.md](./docs/RELEASE_NOTES_v0.1.0.md)
+- **Maintainer Notes:** [docs/OPEN_SOURCE_MAINTAINER_NOTES.md](./docs/OPEN_SOURCE_MAINTAINER_NOTES.md)
+
+> **注意：** `docs/PHASE_3*/`、`docs/PHASE_4*/`、`docs/PHASE_5*/` 为开发阶段记录，后续版本可能简化或重新组织。
+
+### 免责声明
 
 AI 识别和翻译结果仅供参考，可能存在误差，建议家长陪同使用。
