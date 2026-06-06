@@ -290,6 +290,7 @@ MIT License — see [LICENSE](./LICENSE)
 - **GitHub Release:** [v0.1.0](https://github.com/conanxin/warmwords-miniprogram/releases/tag/v0.1.0)
 - **Release Notes:** [docs/RELEASE_NOTES_v0.1.0.md](./docs/RELEASE_NOTES_v0.1.0.md)
 - **Maintainer Notes:** [docs/OPEN_SOURCE_MAINTAINER_NOTES.md](./docs/OPEN_SOURCE_MAINTAINER_NOTES.md)
+- **Development Handoff Guide:** [docs/DEVELOPMENT_HANDOFF.md](./docs/DEVELOPMENT_HANDOFF.md) — 在另一台机器上从 GitHub clone 并继续开发
 
 > **注意：** `docs/PHASE_3*/`、`docs/PHASE_4*/`、`docs/PHASE_5*/` 为开发阶段记录，后续版本可能简化或重新组织。
 
