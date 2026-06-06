@@ -3,10 +3,12 @@ project.private.config.json
 
 # Environment files — never commit real secrets
 .env
-.env.*
 .env.local
 .env.development
 .env.production
+# Allow .env.example as a template
+!.env.example
+# Note: .env.* excludes .env.example above
 
 # Keys and certificates
 *.key

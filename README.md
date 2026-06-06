@@ -134,6 +134,8 @@ Right-click cloudfunctions/cleanupRecognitionImages → "Upload Cloud Function"
 
 > **Note:** WeChat cloud functions do NOT support `QCLOUD_`, `SCF_`, or `TENCENTCLOUD_` environment variable prefixes. Use the plain names (e.g., `TTS_SECRET_ID`) as shown above.
 
+> **Note:** See `.env.example` for placeholder environment variable names. Do not put real values in this file.
+
 #### 5. Configure AI Vision Provider
 
 See `docs/AI_PROVIDER_INTEGRATION.md` for detailed setup instructions.

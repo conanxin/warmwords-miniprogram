@@ -48,6 +48,11 @@ cd warmwords-miniprogram
 说明：
 不要使用 TENCENTCLOUD_ / QCLOUD_ / SCF_ 前缀。
 
+**重要提醒：**
+- `.env.example` 包含所有所需环境变量名（占位符），clone 后可参考此文件配置真实值
+- 新机器开发时不要把真实 key 复制到仓库
+- 真实值应配置到微信云函数环境变量（Cloud Development → Environment Variables）
+
 ## 数据库集合
 
 需要创建：
